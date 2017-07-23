@@ -5,8 +5,15 @@ from flask import (
     request,
     jsonify
 )
+from flask_s3 import FlaskS3
+import os
 
 app = Flask(__name__)
+app.config['FLASKS3_BUCKET_NAME'] = os.environ.get('FLASKS3_BUCKET_NAME')
+app.config['AWS_ACCESS_KEY_ID'] = os.environ.get('AWS_ACCESS_KEY_ID')
+app.config['AWS_SECRET_ACCESS_KEY'] = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+application = FlaskS3(app)
 
 
 @app.route("/")
