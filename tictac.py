@@ -12,8 +12,10 @@ app = Flask(__name__)
 app.config['FLASKS3_BUCKET_NAME'] = os.environ.get('FLASKS3_BUCKET_NAME')
 app.config['AWS_ACCESS_KEY_ID'] = os.environ.get('AWS_ACCESS_KEY_ID')
 app.config['AWS_SECRET_ACCESS_KEY'] = os.environ.get('AWS_SECRET_ACCESS_KEY')
+app.config['FLASKS3_FORCE_MIMETYPE'] = True
 
-application = FlaskS3(app)
+s3 = FlaskS3()
+s3.init_app(app)
 
 
 @app.route("/")
