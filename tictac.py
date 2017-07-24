@@ -14,8 +14,8 @@ app.config['AWS_ACCESS_KEY_ID'] = os.environ.get('AWS_ACCESS_KEY_ID')
 app.config['AWS_SECRET_ACCESS_KEY'] = os.environ.get('AWS_SECRET_ACCESS_KEY')
 app.config['FLASKS3_FORCE_MIMETYPE'] = True
 
-s3 = FlaskS3()
-s3.init_app(app)
+# s3 = FlaskS3()
+# s3.init_app(app)
 
 
 @app.route("/")
@@ -34,7 +34,15 @@ def about():
 def send_move():
     """."""
     data = request.json
-    data['board'] = data['board'].replace(' ', 'O', 1)
+    board = list(data['board'])
+    board[data['move']] = 'X'
+    for i, square in enumerate(board):
+        if square == ' ':
+            board[i] = 'O'
+            board = ''.join(board)
+            data['board'] = board
+            break
+    import pdb; pdb.set_trace()
     return jsonify(data), 201
 
 if __name__ == "__main__":
