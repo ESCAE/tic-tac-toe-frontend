@@ -42,7 +42,6 @@ def send_move():
             board = ''.join(board)
             data['board'] = board
             break
-    import pdb; pdb.set_trace()
     return jsonify(data), 201
 
 if __name__ == "__main__":
