@@ -24,6 +24,15 @@ class TicTacTestCase(unittest.TestCase):
         squares = souped.findAll("div", {"class": "square"})
         self.assertTrue(len(squares) == 9)
 
+    def test_status_code_200_about_route(self):
+        """First test."""
+        response = self.app.get('/about')
+        self.assertEqual(response.status_code, 200)
+
+    def test_page_has_html(self):
+        """Home route has game board."""
+        response = self.app.get('/about')
+        self.assertTrue('<html>' in response.data)
 
 if __name__ == '__main__':
     unittest.main()
