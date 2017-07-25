@@ -1,4 +1,4 @@
-# tic-tac-toe-frontend
+# Tic Tac Toe Frontend[![Build Status](https://travis-ci.org/ESCAE/tic-tac-toe-frontend.svg?branch=master)](https://travis-ci.org/ESCAE/tic-tac-toe-frontend)
 Flask based tic-tac-toe front end.
 
 ## Install
@@ -25,3 +25,7 @@ Flask based tic-tac-toe front end.
 ```python tictac.py```
 
 Visit localhost:5000 in a browser to see the board.
+
+## Test
+
+```python test_tictac.py```

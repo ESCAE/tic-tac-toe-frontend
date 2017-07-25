@@ -1,0 +1,17 @@
+language: python
+python:
+  - "2.7"
+  - "3.6"
+
+install:
+  - pip install -r requirements.pip
+  - pip install coveralls
+
+script:
+  - coverage run test_tictac.py
+
+after_success:
+  - coveralls
+
+notifications:
+  email: false
