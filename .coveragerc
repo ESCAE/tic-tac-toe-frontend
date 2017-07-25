@@ -3,7 +3,7 @@ omit =
   ENV
 
 source =
-  test_tictac
+  src/test_tictac
 
 [report]
 show_missing = True
