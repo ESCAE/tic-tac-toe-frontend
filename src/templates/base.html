@@ -3,10 +3,15 @@
   <title>TicTac</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-
 </head>
+
 <body>
- {% block body %}{% endblock %}
+  <div class="topnav" id="myTopnav">
+    <a href="{{ url_for('game') }}">Play</a>
+    <a href="{{ url_for('about') }}">About</a>
+  </div>
+
+  {% block body %}{% endblock %}
 
 </body>
   <script
