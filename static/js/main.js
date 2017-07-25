@@ -18,7 +18,7 @@ $('.square').click(function(){
         } else if ( data['WL'] === false ){
           alert('You Lose!');
         }
-        console.log($('.square').get(data['move']));
+        $('.square').eq(data['move']).text('O').fadeIn();
       },
       error: function(){
         console.log("Cannot get data");
