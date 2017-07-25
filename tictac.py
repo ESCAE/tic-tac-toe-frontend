@@ -27,7 +27,7 @@ def game():
 @app.route("/about")
 def about():
     """About View."""
-    return "Hello World!"
+    return "<html><h1>Hello World!</h1></html>"
 
 
 @app.route('/api/v1.0/move', methods=['POST'])
