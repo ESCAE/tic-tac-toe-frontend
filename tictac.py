@@ -34,7 +34,14 @@ def about():
 def send_move():
     """."""
     data = request.json
-    data['board'] = data['board'].replace(' ', 'O', 1)
+    board = list(data['board'])
+    board[data['move']] = 'X'
+    for i, square in enumerate(board):
+        if square == ' ':
+            board[i] = 'O'
+            board = ''.join(board)
+            data['board'] = board
+            break
     return jsonify(data), 201
 
 if __name__ == "__main__":
