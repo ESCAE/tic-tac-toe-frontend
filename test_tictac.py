@@ -32,7 +32,7 @@ class TicTacTestCase(unittest.TestCase):
     def test_page_has_html(self):
         """Home route has game board."""
         response = self.app.get('/about')
-        self.assertTrue('<html>' in response.data)
+        self.assertTrue(b'<html>' in response.data)
 
 if __name__ == '__main__':
     unittest.main()
