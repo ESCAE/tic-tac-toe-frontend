@@ -1,4 +1,4 @@
-# Tic Tac Toe Frontend[![Build Status](https://travis-ci.org/ESCAE/tic-tac-toe-frontend.svg?branch=master)](https://travis-ci.org/ESCAE/tic-tac-toe-frontend)
+# Tic Tac Toe Frontend[![Build Status](https://travis-ci.org/ESCAE/tic-tac-toe-frontend.svg?branch=master)](https://travis-ci.org/ESCAE/tic-tac-toe-frontend)[![Coverage Status](https://coveralls.io/repos/github/ESCAE/tic-tac-toe-frontend/badge.svg?branch=master)](https://coveralls.io/github/ESCAE/tic-tac-toe-frontend?branch=master)
 Flask based tic-tac-toe front end.
 
 ## Install
