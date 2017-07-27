@@ -21,14 +21,32 @@ body {
    */
 }
 
+.container { 
+  border: 5px solid red;
+  position: relative;
+  text-align: center;
+  width: 50%;
+}
+.container:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+
 .board {
-  max-width: 600px;
-  margin: auto;
+  /*max-width: 600px;
+  margin: auto;*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+  font-size: 2em;
+  padding-top: 20%;
 }
 
 .board .row {
   display: flex;
-  min-height: calc(10vw + 10vh + 2vmin);
+  /*min-height: calc(10vw + 10vh + 2vmin);*/
   border-bottom: 5px solid black;
 }
 
