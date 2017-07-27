@@ -1,6 +1,6 @@
 body {
   color: slategray;
-  font-family: 'Abril Fatface';
+  font-family: 'Sans Serif';
   line-height: 1.2;
 }
 
@@ -14,7 +14,7 @@ body {
 
 .headline {
   margin: 0;
-  font-size: calc(3vw + 3vh + 2vmin);
+  font-size: 3em;
   /* See:
    * https://codepen.io/CrocoDillon/pen/jgmwt
    * For some math behind this
