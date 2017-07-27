@@ -11,19 +11,13 @@ body {
   box-sizing: border-box;
 }
 
-.headline {
-  margin: 0;
-  font-size: 3em;
-}
-
-.container { 
-  border: 5px solid red;
+.wrapper { 
   position: relative;
   text-align: center;
   width: 90%;
   margin: auto
 }
-.container:after {
+.wrapper:after {
     content: "";
     display: block;
     padding-bottom: 100%;
@@ -39,28 +33,16 @@ body {
 .board .row {
   display: flex;
   height: 33%;
-  border-bottom: 5px solid black;
 }
-
-.board .row:last-child {
-  border: none;
-}
-
 .square {
   background: white;
-  width: 34%;
+  width: 32%;
   height: 100%;
   color: Blue;
   padding: 7%;
   font-weight: bold;
-  font-size: calc(4vw + 5vh + 2vmin);
+  font-size: calc(4vw + 4vh + 2vmin);
   text-align: center;
+  border: 5px solid black;
 }
 
-.square {
-  border-right: 5px solid black;
-}
-
-.square:last-child {
-  border: none;
-}

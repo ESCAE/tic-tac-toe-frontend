@@ -1,28 +1,33 @@
 {% extends "base.html" %}
 {% block body %}
 
-<div class="headline">
-  This is a Tic Tac Toe game against an AI using a nuero network!
-  Click or Tap to play or visit the about page to learn more.
+<div class="col-xs-12 col-sm-6">
+  This is a Tic Tac Toe game against an AI using a nueral network!
 </div>
 
-<div class="container">
-  <div class="board">
-    <div class="row">
-      <div class="square"> </div>
-      <div class="square"> </div>
-      <div class="square"> </div>
-    </div>
+<div class="col-xs-12 col-sm-6 col-sm-push-6">
+  <div class="wrapper">
+    <div class="board">
       <div class="row">
-      <div class="square"> </div>
-      <div class="square"> </div>
-      <div class="square"> </div>
-    </div>
-      <div class="row">
-      <div class="square"> </div>
-      <div class="square"> </div>
-      <div class="square"> </div>
+        <div class="square"> </div>
+        <div class="square"> </div>
+        <div class="square"> </div>
+      </div>
+        <div class="row">
+        <div class="square"> </div>
+        <div class="square"> </div>
+        <div class="square"> </div>
+      </div>
+        <div class="row">
+        <div class="square"> </div>
+        <div class="square"> </div>
+        <div class="square"> </div>
+      </div>
     </div>
   </div>
+</div>
+
+<div class="col-xs-12 col-sm-6">
+  Click/Tap to play or visit the about page to learn more.
 </div>
 {% endblock %}
