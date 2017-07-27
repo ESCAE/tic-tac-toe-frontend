@@ -1,7 +1,6 @@
 body {
   color: slategray;
   font-family: 'Sans Serif';
-  /*line-height: 1.2;*/
 }
 
 body {
@@ -15,10 +14,6 @@ body {
 .headline {
   margin: 0;
   font-size: 3em;
-  /* See:
-   * https://codepen.io/CrocoDillon/pen/jgmwt
-   * For some math behind this
-   */
 }
 
 .container { 
@@ -35,19 +30,15 @@ body {
   }
 
 .board {
-  /*max-width: 600px;
-  margin: auto;*/
   position: absolute;
   width: 100%;
   height: 100%;
-  
   font-size: 2em;
-  /*padding-top: 20%;*/
 }
 
 .board .row {
   display: flex;
-  /*min-height: calc(10vw + 10vh + 2vmin);*/
+  height: 33%;
   border-bottom: 5px solid black;
 }
 
@@ -58,6 +49,7 @@ body {
 .square {
   background: white;
   width: 34%;
+  height: 100%;
   color: Blue;
   padding: 7%;
   font-weight: bold;
