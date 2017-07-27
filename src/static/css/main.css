@@ -1,7 +1,7 @@
 body {
   color: slategray;
   font-family: 'Sans Serif';
-  line-height: 1.2;
+  /*line-height: 1.2;*/
 }
 
 body {
@@ -25,7 +25,8 @@ body {
   border: 5px solid red;
   position: relative;
   text-align: center;
-  width: 50%;
+  width: 90%;
+  margin: auto
 }
 .container:after {
     content: "";
@@ -41,7 +42,7 @@ body {
   height: 100%;
   
   font-size: 2em;
-  padding-top: 20%;
+  /*padding-top: 20%;*/
 }
 
 .board .row {
@@ -60,7 +61,7 @@ body {
   color: Blue;
   padding: 7%;
   font-weight: bold;
-  font-size: calc(4vw + 4vh + 2vmin);
+  font-size: calc(4vw + 5vh + 2vmin);
   text-align: center;
 }
 
