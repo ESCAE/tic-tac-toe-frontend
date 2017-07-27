@@ -5,6 +5,7 @@ body {
 
 body {
   margin: 10px;
+  padding-top: 50px;
 }
 
 * {
@@ -15,7 +16,9 @@ body {
   position: relative;
   text-align: center;
   width: 90%;
-  margin: auto
+  max-height: 600px;
+  max-width: 600px;
+  margin: auto;
 }
 .wrapper:after {
     content: "";
@@ -45,4 +48,7 @@ body {
   text-align: center;
   border: 5px solid black;
 }
-
+ .marg {
+   margin-top: 5vh;
+   margin-bottom: 5vh;
+ }
