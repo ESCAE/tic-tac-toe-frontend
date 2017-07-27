@@ -14,8 +14,11 @@ app.config['AWS_ACCESS_KEY_ID'] = os.environ.get('AWS_ACCESS_KEY_ID')
 app.config['AWS_SECRET_ACCESS_KEY'] = os.environ.get('AWS_SECRET_ACCESS_KEY')
 app.config['FLASKS3_FORCE_MIMETYPE'] = True
 
-s3 = FlaskS3()
-s3.init_app(app)
+
+# ======== Comment out to use local statics! ========== #
+s3 = FlaskS3()                                          #
+s3.init_app(app)                                        #
+# ===================================================== #
 
 
 @app.route("/")
@@ -27,7 +30,7 @@ def game():
 @app.route("/about")
 def about():
     """About View."""
-    return "<html><h1>Hello World!</h1></html>"
+    return render_template('about.html')
 
 
 @app.route('/api/v1.0/move', methods=['POST'])
