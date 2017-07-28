@@ -20,15 +20,7 @@ $('.square').click(function(){
 
 function renderMove(data) {
   $('.square').each( function ( idx ){
-    $(this).text(data['board'].charAt(idx)).css('color', function( idx ){
-      if (data['board'].charAt(idx) === 'X'){
-        return '#606060'
-      } else if (data['board'].charAt(idx) === 'O') {
-        return '#2d2d2d'
-      } else {
-        return 'black'
-      }
-    });
+    $(this).text(data['board'].charAt(idx));
   });
   if(data['WL'] === true) {
     data['Wline'].forEach(function(index){
