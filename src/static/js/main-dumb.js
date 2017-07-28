@@ -1,5 +1,6 @@
 $('.square').click(function(){
   if ($(this).text() != 'X' && $(this).text() != 'O') {
+    if (!$('p').hasClass("ai-move")) {
     let move = $('.square').index($(this));
     let board = $('.square').text();
     $.ajax({
@@ -9,13 +10,14 @@ $('.square').click(function(){
       contentType: 'application/json',
       data: JSON.stringify({board: board, move: move}),
       success: function ( data ) {
+        $('p').toggleClass("ai-move");
         renderMove(data);
       },
-      error: function(){
-        console.log("Cannot get data");
+      error: function( e ){
+        console.log(e, "Cannot get data");
       }
     });
-  }
+  }}
 });
 
 function renderMove(data) {
@@ -29,22 +31,27 @@ function renderMove(data) {
     console.log('You Win!');
     $('.content').text('You Win! Tap to play again.');
     $('.game-over').toggleClass("game-over-ADDED");
+    $('p').toggleClass("ai-move");
   } else if ( data['WL'] === false ){
     setTimeout(function(){
-      $('.square').eq(data['move']).text('O');
-      data['Wline'].forEach(function(index){
-        $('.square').eq(index).css('color', 'red');
-      });
-    }, 800);
+      if ($('.square').eq(data['move']).text() != 'X' && $('.square').eq(data['move']).text() != 'O') {
+        $('.square').eq(data['move']).text('O');
+        data['Wline'].forEach(function(index){
+          $('.square').eq(index).css('color', 'red');
+        });
+      }}, 500);
     setTimeout(function(){
       console.log('You Lose!');
       $('.content').text('You Lose! Tap to play again.');
       $('.game-over').toggleClass("game-over-ADDED");
-    }, 900);
+      $('p').toggleClass("ai-move");
+    }, 600);
   } else {
     setTimeout(function(){
-      $('.square').eq(data['move']).text('O')
-    }, 800);
+      if ($('.square').eq(data['move']).text() != 'X' && $('.square').eq(data['move']).text() != 'O') {
+        $('.square').eq(data['move']).text('O')
+        $('p').toggleClass("ai-move");
+    }}, 500);
   }
 }
 

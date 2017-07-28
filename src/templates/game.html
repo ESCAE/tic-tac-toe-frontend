@@ -1,42 +1,37 @@
 {% extends "base.html" %}
 {% block body %}
-<div class="col-8 offset-2 col-sm-6 offset-sm-3 lead marg">
-  This is a Tic Tac Toe game against an AI using a nueral network!
-</div>
-
-<div class="col-12 col-sm-8 offset-sm-2 marg">
-  <div class="wrapper">
-    <div class="board">
-      <div class="row">
-        <div class="square"> </div>
-        <div class="square"> </div>
-        <div class="square"> </div>
-      </div>
-        <div class="row">
-        <div class="square"> </div>
-        <div class="square"> </div>
-        <div class="square"> </div>
-      </div>
-        <div class="row">
-        <div class="square"> </div>
-        <div class="square"> </div>
-        <div class="square"> </div>
+<div class="col-12 col-sm-8 offset-sm-2 lead marg wrapper">
+  <div>
+    This is a Tic Tac Toe game against an AI using a nueral network!
+  </div>
+  <p>
+    <div class="marg">
+      <div class="wrapper">
+        <div class="board">
+          <div class="row">
+            <div class="square"> </div>
+            <div class="square"> </div>
+            <div class="square"> </div>
+          </div>
+            <div class="row">
+            <div class="square"> </div>
+            <div class="square"> </div>
+            <div class="square"> </div>
+          </div>
+            <div class="row">
+            <div class="square"> </div>
+            <div class="square"> </div>
+            <div class="square"> </div>
+          </div>
+        </div>
       </div>
     </div>
+  </p>
+
+  <div>
+    Click/Tap to play or visit the about page to learn more.
   </div>
 </div>
-
-<div class="col-8 offset-2 col-sm-6 offset-sm-3 lead marg">
-  Click/Tap to play or visit the about page to learn more.
-</div>
-
  <div class="game-over text-center"><div class="content"></div></div>
 
-{% if 'neural' in url %}
-  <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
-{% elif 'greedy' in url %}
-  <script type="text/javascript" src="{{ url_for('static', filename='js/main-greedy.js') }}"></script>
-{% else %}
-  <script type="text/javascript" src="{{ url_for('static', filename='js/main-dumb.js') }}"></script>
-{% endif %}
 {% endblock %}

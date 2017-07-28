@@ -11,19 +11,32 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#myTopNav" aria-controls="myTopNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="{{ url_for('game') }}">
-    <img src="{{ url_for('static', filename='images/tictac-inverse.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
-   Game AI
-</a>
+  <a class="navbar-brand" href="{{ url_for('game_neural') }}"><img src="{{ url_for('static', filename='images/tictac-inverse.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">AI bot</a>
+  <a class="navbar-brand" href="{{ url_for('game_greedy') }}">Greedy bot</a>
+  <a class="navbar-brand" href="{{ url_for('game_dumb') }}">Dumb bot</a>
 
   <div class="collapse navbar-collapse" id="myTopNav">
     <ul class="navbar-nav mr-auto">
     </ul>
     <ul class="navbar-nav">
+      {% if 'about' not in request.path %}
       <li class="nav-item active">
-        <a class="nav-link" href="{{ url_for('game') }}">New Game<span class="sr-only">(current)</span></a>
-      </li>
+      {% else %}
       <li class="nav-item">
+      {% endif %}
+        {% if 'dumb' in request.path %}
+        <a class="nav-link" href="{{ url_for('game_dumb') }}">New Game<span class="sr-only">(current)</span></a>
+        {% elif 'greedy'  in request.path %}
+        <a class="nav-link" href="{{ url_for('game_greedy') }}">New Game<span class="sr-only">(current)</span></a>
+        {% else %}
+        <a class="nav-link" href="{{ url_for('game_neural') }}">New Game<span class="sr-only">(current)</span></a>
+        {% endif %}
+      </li>
+      {% if 'about' in request.path %}
+      <li class="nav-item active">
+      {% else %}
+      <li class="nav-item">
+      {% endif %}
         <a class="nav-link" href="{{ url_for('about') }}">About</a>
       </li>
     </ul>
@@ -40,4 +53,11 @@
   crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+{% if 'dumb' in request.path %}
+  <script type="text/javascript" src="{{ url_for('static', filename='js/main-dumb.js') }}"></script>
+{% elif 'greedy' in request.path %}
+  <script type="text/javascript" src="{{ url_for('static', filename='js/main-greedy.js') }}"></script>
+{% else %}
+  <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endif %}
 </html>
