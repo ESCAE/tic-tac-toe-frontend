@@ -12,7 +12,7 @@ body {
   box-sizing: border-box;
 }
 
-.wrapper { 
+.wrapper {
   position: relative;
   text-align: center;
   width: 90%;
@@ -20,6 +20,7 @@ body {
   max-width: 600px;
   margin: auto;
 }
+
 .wrapper:after {
     content: "";
     display: block;
@@ -52,6 +53,7 @@ body {
  .marg {
    margin-top: 5vh;
    margin-bottom: 5vh;
+   vertical-align: middle;
  }
 
  .game-over {
@@ -63,20 +65,20 @@ body {
      left:0;
      bottom:0;
      top:0;
-     margin: auto; 
+     margin: auto;
      font-size: 5em;
      color: White;
  }
  .game-over-ADDED {
      height:100%;
-     width:100%;  
+     width:100%;
      -webkit-transition: all 0.5s linear;
      -moz-transition: all 0.5s linear;
      -ms-transition: all 0.5s linear;
      -o-transition: all 0.5s linear;
      transition: all 0.5s linear;
  }
- 
+
  .content {
    margin-top: 20%
  }

@@ -4,7 +4,7 @@ $('.square').click(function(){
     let move = $('.square').index($(this));
     let board = $('.square').text();
     $.ajax({
-      url: "http://ec2-50-112-145-55.us-west-2.compute.amazonaws.com/api/v1/bot/",
+      url: "http://ec2-50-112-145-55.us-west-2.compute.amazonaws.com/api/v1/bot/dumb/",
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
