@@ -16,8 +16,8 @@ app.config['FLASKS3_FORCE_MIMETYPE'] = True
 
 
 # ======== Comment out to use local statics! ========== #
-s3 = FlaskS3()                                          #
-s3.init_app(app)                                        #
+# s3 = FlaskS3()                                          #
+# s3.init_app(app)                                        #
 # ===================================================== #
 
 
