@@ -1,55 +1,82 @@
 body {
   color: slategray;
   font-family: 'Sans Serif';
-  line-height: 1.2;
 }
 
 body {
   margin: 10px;
+  padding-top: 50px;
 }
 
 * {
   box-sizing: border-box;
 }
 
-.headline {
-  margin: 0;
-  font-size: 3em;
-  /* See:
-   * https://codepen.io/CrocoDillon/pen/jgmwt
-   * For some math behind this
-   */
-}
-
-.board {
+.wrapper { 
+  position: relative;
+  text-align: center;
+  width: 90%;
+  max-height: 600px;
   max-width: 600px;
   margin: auto;
+}
+.wrapper:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+
+.board {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 2em;
 }
 
 .board .row {
   display: flex;
-  min-height: calc(10vw + 10vh + 2vmin);
-  border-bottom: 5px solid black;
+  height: 33%;
 }
-
-.board .row:last-child {
-  border: none;
-}
-
 .square {
   background: white;
-  width: 34%;
-  color: Blue;
-  padding: 7%;
+  color: #606060;
+  display: table-cell;
+  vertical-align: middle;
+  width: 32%;
+  height: 100%;
   font-weight: bold;
   font-size: calc(4vw + 4vh + 2vmin);
   text-align: center;
+  border: 5px solid black;
 }
+ .marg {
+   margin-top: 5vh;
+   margin-bottom: 5vh;
+ }
 
-.square {
-  border-right: 5px solid black;
-}
-
-.square:last-child {
-  border: none;
-}
+ .game-over {
+     position:absolute;
+     height:0px;
+     width:0px;
+     background-color: rgba(0, 0, 0, 0.80);
+     right:0;
+     left:0;
+     bottom:0;
+     top:0;
+     margin: auto; 
+     font-size: 5em;
+     color: White;
+ }
+ .game-over-ADDED {
+     height:100%;
+     width:100%;  
+     -webkit-transition: all 0.5s linear;
+     -moz-transition: all 0.5s linear;
+     -ms-transition: all 0.5s linear;
+     -o-transition: all 0.5s linear;
+     transition: all 0.5s linear;
+ }
+ 
+ .content {
+   margin-top: 20%
+ }

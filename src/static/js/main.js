@@ -24,19 +24,22 @@ function renderMove(data) {
   });
   if(data['WL'] === true) {
     data['Wline'].forEach(function(index){
-      $('.square').eq(index).css("color", "green");
+      $('.square').eq(index).css('color', 'green');
     });
-    alert('You Win!');
+    console.log('You Win!');
+    $('.content').text('You Win! Tap to play again.');
+    $('.game-over').toggleClass("game-over-ADDED");
   } else if ( data['WL'] === false ){
-    console.log(data['Wline']);
     setTimeout(function(){
       $('.square').eq(data['move']).text('O');
       data['Wline'].forEach(function(index){
-        $('.square').eq(index).css("color", "red");
+        $('.square').eq(index).css('color', 'red');
       });
     }, 800);
     setTimeout(function(){
-      alert('You Lose!');
+      console.log('You Lose!');
+      $('.content').text('You Lose! Tap to play again.');
+      $('.game-over').toggleClass("game-over-ADDED");
     }, 900);
   } else {
     setTimeout(function(){
@@ -44,3 +47,11 @@ function renderMove(data) {
     }, 800);
   }
 }
+
+$('.game-over').click(function(){
+  $('.square').each( function ( idx ){
+    $(this).text(' ').css('color', '#606060');
+  });
+  $('.content').text('');
+  $('.game-over').toggleClass("game-over-ADDED");
+});
