@@ -30,13 +30,6 @@
   Click/Tap to play or visit the about page to learn more.
 </div>
 
- <div class="game-over text-center"><div class="content"></div></div>
+ <div class="game-over text-center"><div class="content"></div></div>  
 
-{% if 'neural' in url %}
-  <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
-{% elif 'greedy' in url %}
-  <script type="text/javascript" src="{{ url_for('static', filename='js/main-greedy.js') }}"></script>
-{% else %}
-  <script type="text/javascript" src="{{ url_for('static', filename='js/main-dumb.js') }}"></script>
-{% endif %}
 {% endblock %}
