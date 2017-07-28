@@ -20,23 +20,31 @@ $('.square').click(function(){
 
 function renderMove(data) {
   $('.square').each( function ( idx ){
-    $(this).text(data['board'].charAt(idx));
+    $(this).text(data['board'].charAt(idx)).css('color', function( idx ){
+      if (data['board'].charAt(idx) === 'X'){
+        return '#606060'
+      } else if (data['board'].charAt(idx) === 'O') {
+        return '#2d2d2d'
+      } else {
+        return 'black'
+      }
+    });
   });
   if(data['WL'] === true) {
     data['Wline'].forEach(function(index){
-      $('.square').eq(index).css("color", "green");
+      $('.square').eq(index).css('color', 'green');
     });
-    alert('You Win!');
+    console.log('You Win!');
   } else if ( data['WL'] === false ){
     console.log(data['Wline']);
     setTimeout(function(){
       $('.square').eq(data['move']).text('O');
       data['Wline'].forEach(function(index){
-        $('.square').eq(index).css("color", "red");
+        $('.square').eq(index).css('color', 'red');
       });
     }, 800);
     setTimeout(function(){
-      alert('You Lose!');
+      console.log('You Lose!');
     }, 900);
   } else {
     setTimeout(function(){

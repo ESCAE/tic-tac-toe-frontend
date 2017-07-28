@@ -39,10 +39,12 @@ body {
 }
 .square {
   background: white;
+  display: table-cell;
+  vertical-align: middle;
   width: 32%;
   height: 100%;
   color: Blue;
-  padding: 7%;
+  /*padding: 7%;*/
   font-weight: bold;
   font-size: calc(4vw + 4vh + 2vmin);
   text-align: center;
@@ -52,3 +54,11 @@ body {
    margin-top: 5vh;
    margin-bottom: 5vh;
  }
+ 
+ .X {
+   color: #606060
+ }
+ 
+.O {
+  color: #2d2d2d
+}
