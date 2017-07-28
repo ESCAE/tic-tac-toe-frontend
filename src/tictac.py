@@ -16,14 +16,32 @@ app.config['FLASKS3_FORCE_MIMETYPE'] = True
 
 
 # ======== Comment out to use local statics! ========== #
-s3 = FlaskS3()                                          #
-s3.init_app(app)                                        #
+# s3 = FlaskS3()                                          #
+# s3.init_app(app)                                        #
 # ===================================================== #
 
 
 @app.route("/")
-def game():
-    """Game Viev."""
+def game_select():
+    """Opponent selection screen."""
+    return render_template('select.html')
+
+
+@app.route("/neural")
+def game_neural():
+    """Game Viev with neural opponent."""
+    return render_template('game.html')
+
+
+@app.route("/dumb")
+def game_dumb():
+    """Game Viev with dumb opponent."""
+    return render_template('game.html')
+
+
+@app.route("/greedy")
+def game_greedy():
+    """Game Viev with greedy opponent."""
     return render_template('game.html')
 
 
