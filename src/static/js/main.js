@@ -27,8 +27,8 @@ function renderMove(data) {
       $('.square').eq(index).css('color', 'green');
     });
     console.log('You Win!');
+    $('.game-over').toggleClass("game-over-ADDED");
   } else if ( data['WL'] === false ){
-    console.log(data['Wline']);
     setTimeout(function(){
       $('.square').eq(data['move']).text('O');
       data['Wline'].forEach(function(index){
@@ -37,6 +37,7 @@ function renderMove(data) {
     }, 800);
     setTimeout(function(){
       console.log('You Lose!');
+      $('.game-over').toggleClass("game-over-ADDED");
     }, 900);
   } else {
     setTimeout(function(){

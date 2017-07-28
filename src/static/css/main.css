@@ -54,3 +54,24 @@ body {
    margin-bottom: 5vh;
  }
 
+ .game-over {
+     position:absolute;
+     height:0px;
+     width:0px;
+     background-color: rgba(0, 0, 0, 0.45);
+     right:0;
+     left:0;
+     bottom:0;
+     top:0;
+     margin: auto; 
+     
+ }
+ .game-over-ADDED {
+     height:100%;
+     width:100%;  
+     -webkit-transition: all 0.5s linear;
+     -moz-transition: all 0.5s linear;
+     -ms-transition: all 0.5s linear;
+     -o-transition: all 0.5s linear;
+     transition: all 0.5s linear;
+ }
