@@ -58,13 +58,14 @@ body {
      position:absolute;
      height:0px;
      width:0px;
-     background-color: rgba(0, 0, 0, 0.45);
+     background-color: rgba(0, 0, 0, 0.80);
      right:0;
      left:0;
      bottom:0;
      top:0;
      margin: auto; 
-     
+     font-size: 5em;
+     color: White;
  }
  .game-over-ADDED {
      height:100%;
@@ -74,4 +75,8 @@ body {
      -ms-transition: all 0.5s linear;
      -o-transition: all 0.5s linear;
      transition: all 0.5s linear;
+ }
+ 
+ .content {
+   margin-top: 20%
  }

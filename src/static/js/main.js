@@ -27,6 +27,7 @@ function renderMove(data) {
       $('.square').eq(index).css('color', 'green');
     });
     console.log('You Win!');
+    $('.content').text('You Win! Tap to play again.');
     $('.game-over').toggleClass("game-over-ADDED");
   } else if ( data['WL'] === false ){
     setTimeout(function(){
@@ -37,6 +38,7 @@ function renderMove(data) {
     }, 800);
     setTimeout(function(){
       console.log('You Lose!');
+      $('.content').text('You Lose! Tap to play again.');
       $('.game-over').toggleClass("game-over-ADDED");
     }, 900);
   } else {
@@ -45,3 +47,11 @@ function renderMove(data) {
     }, 800);
   }
 }
+
+$('.game-over').click(function(){
+  $('.square').each( function ( idx ){
+    $(this).text(' ').css('color', '#606060');
+  });
+  $('.content').text('');
+  $('.game-over').toggleClass("game-over-ADDED");
+});
