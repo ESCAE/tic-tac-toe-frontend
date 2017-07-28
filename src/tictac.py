@@ -22,26 +22,8 @@ s3.init_app(app)                                        #
 
 
 @app.route("/")
-def game_select():
-    """Opponent selection screen."""
-    return render_template('select.html')
-
-
-@app.route("/neural")
-def game_neural():
-    """Game Viev with neural opponent."""
-    return render_template('game.html')
-
-
-@app.route("/dumb")
-def game_dumb():
-    """Game Viev with dumb opponent."""
-    return render_template('game.html')
-
-
-@app.route("/greedy")
-def game_greedy():
-    """Game Viev with greedy opponent."""
+def game():
+    """Game Viev."""
     return render_template('game.html')
 
 
